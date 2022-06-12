@@ -1,0 +1,184 @@
+1) #include <stdio.h>
+
+int main()
+{
+    char s[100],temp=1,c='*';
+    int i,j,k=0,n;
+    printf("Enter the sentence:");
+    gets(s);
+    for(i=0;s[i];i++)
+    {
+        if(!(s[i]==c))
+        {
+            for(j=i+1;s[j];j++)
+            {
+                if(s[i]==s[j])
+                s[j]=c;
+            }
+        }
+    }
+    for(i=0;s[i];i++)
+    {
+        s[i]=s[i+k];
+        if(s[i]==c)
+        {
+            k++;
+            i--;
+        }
+    }
+    printf("expected output:");
+    printf("%s",s);
+    return 0;
+}
+2) #include <stdio.h>
+#include<ctype.h>
+int main()
+{
+    char s[100],temp=1,c='*';
+    int i,j,k=0,n;
+    printf("Enter the sentence:");
+    gets(s);
+    for(i=0;i<strlen(s);i++)
+    {
+        s[i]=tolower(s[i]);
+    }
+    for(i=0;s[i];i++)
+    {
+        if(!(s[i]==c))
+        {
+            for(j=i+1;s[j];j++)
+            {
+                if(s[i]==s[j])
+                s[j]=c;
+            }
+        }
+    }
+    for(i=0;s[i];i++)
+    {
+        s[i]=s[i+k];
+        if(s[i]==c)
+        {
+            k++;
+            i--;
+        }
+    }
+    printf("expected output:");
+    printf("%s",s);
+    return 0;
+}
+3) #include <string.h>
+#include <ctype.h>
+#include <stdio.h>
+int main()
+{
+    char s[100],temp=1,c='*',chTemp;  
+    int i,j,k=0,n;
+ 
+    printf("Enter the sentence : ");
+    gets(s); 
+    for(i=0;s[i];i++)
+    {
+     if(!(s[i]==c))
+     {
+      for(j=i+1;s[j];j++)
+            {
+             if(s[i]==s[j])
+                s[j]=c;
+      }
+      }
+      
+    }
+    for(i=0;s[i];i++)
+    {
+      s[i]=s[i+k];
+        if(s[i]==c)
+      {
+    k++;
+    i--;
+     }
+      
+    }
+    for(i=0; i<strlen(s); i++)
+    {
+        for(j=0; j<strlen(s)-1; j++)
+        {
+            if(s[j]>s[j+1])
+            {
+                chTemp = s[j];
+                s[j] = s[j+1];
+                s[j+1] = chTemp;
+            }
+        }
+    }
+    printf("expected output : ");
+   printf("%s",s);
+   return 0;
+}
+4) #include <stdio.h>
+#include <string.h>
+ int main()
+{
+    char s[100];  
+    int i,j,k,count=0,n;
+    printf("Enter the string : ");
+    gets(s);
+     for(j=0;s[j];j++);
+  n=j; 
+     printf(" frequency count character in string:\n");
+     for(i=0;i<n;i++)  
+    {
+      count=1;
+     if(s[i])
+     {
+  
+     for(j=i+1;j<n;j++)  
+       {   
+      
+         if(s[i]==s[j])
+         {
+                 count++;
+                 s[j]='\0';
+       }
+       }  
+       printf(" '%c' = %d \n",s[i],count);
+          }
+   
+    } 
+  return 0;
+}
+5) #include <stdio.h>
+#include <string.h>
+ int main()
+{
+    char s[100];  
+    int i,j,k,count=0,n;
+    printf("Enter the string : ");
+    gets(s);
+for(i=0;i<strlen(s);i++)
+    {
+        s[i]=tolower(s[i]);
+    }
+     for(j=0;s[j];j++);
+  n=j; 
+     printf(" frequency count character in string:\n");
+     for(i=0;i<n;i++)  
+    {
+      count=1;
+     if(s[i])
+     {
+  
+     for(j=i+1;j<n;j++)  
+       {   
+      
+         if(s[i]==s[j])
+         {
+                 count++;
+                 s[j]='\0';
+       }
+       }  
+       printf(" '%c' = %d \n",s[i],count);
+          }
+   
+    } 
+  return 0;
+}
